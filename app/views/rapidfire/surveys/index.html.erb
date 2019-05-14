@@ -1,17 +1,19 @@
-<h3>
+<div class="create-new-survey">
   <% if can_administer? %>
-    <%= link_to "New Survey", new_survey_path %>
+    <%= link_to "Create Survey", new_survey_path %>
+    <hr>
   <% end %>
-</h3>
+</div>
+
 
 <table>
   <colgroup>
     <col>
-    <col width="250">
+    <col>
   </colgroup>
   <thead>
     <tr>
-      <th>Survey</th>
+      <th style="border-right: 1px solid black;">Survey</th>
       <th>Action</th>
     </tr>
   </thead>

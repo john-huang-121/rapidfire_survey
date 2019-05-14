@@ -1,4 +1,4 @@
-<h3><%= survey.new_record? ? "New Survey" : "Edit Survey" %></h3>
+<h1 class="create-survey-header"><%= survey.new_record? ? "New Survey" : "Edit Survey" %></h1>
 
 <%= form_for survey do |f| %>
   <%- if survey.errors.any? %>
