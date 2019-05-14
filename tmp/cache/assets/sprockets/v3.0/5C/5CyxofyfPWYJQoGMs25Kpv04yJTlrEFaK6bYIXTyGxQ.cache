@@ -1,0 +1,9 @@
+I"ã(function() {
+  this.loginAdmin = function() {
+    document.getElementById('login-username').value = 'admin';
+    document.getElementById('login-password').value = '123456';
+    return console.log('here');
+  };
+
+}).call(this);
+:ET

@@ -1,23 +1,27 @@
-<h1>Log in!</h1>
+<div class="login-page-container">
+  <div class="login-container">
+    <h1 class="login-h1">Log in</h1>
 
-<form action="/session" method="POST">
-  <input
-    type="hidden"
-    name="authenticity_token"
-    value="<%= form_authenticity_token %>">
+    <form action="/session" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <label for="user_username">Username</label>
-  <input type="text" name="user[username]" id="user_username">
+      <input class="login-input-box" type="text" name="user[username]" placeholder="Username" id="login-username">
 
-  <br />
+      <br />
 
-  <label for="user_password">Password</label>
-  <input type="password" name="user[password]" id="user_password">
+      <input class="login-input-box" type="password" name="user[password]" placeholder="Password" id="login-password">
 
-  <br />
+      <br />
 
-  <%= render partial: 'layouts/errors/errors' %>
+      <%= render partial: 'layouts/errors/errors' %>
 
-  <input type="submit" value="Log in!">
-</form>
-<%= link_to t('Back to home'), '/' %>
+      <div class="login-and-admin-btn-container">
+        <input class="login" type="submit" value="Log in">
+        <button class="login" onclick="loginAdmin()">Admin Login</button>
+      </div>
+    </form>
+    <section class="login-new-user-redirect-container">New to Survey?
+      <a class="login-new-user-redirect" href="/users">Sign Up</a>
+    </section>
+  </div>
+</div>

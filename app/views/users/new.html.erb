@@ -1,24 +1,26 @@
-<h1>Sign Up!</h1>
+<div class="signup-page-container">
+  <div class="signup-container">
+    <h1 class="signup-h1">Sign Up</h1>
 
-<form action="/users" method="POST">
-  <input
-    type="hidden"
-    name="authenticity_token"
-    value="<%= form_authenticity_token %>">
+    <form action="/session" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <label for="user_username">Username</label>
-  <input type="text" name="user[username]" id="user_username">
+      <input class="signup-input-box" type="text" name="user[username]" placeholder="Username">
 
-  <br />
+      <br />
 
-  <label for="user_password">Password</label>
-  <input type="password" name="user[password]" id="user_password">
+      <input class="signup-input-box" type="password" name="user[password]" placeholder="Password">
 
-  <br />
+      <br />
 
-  <%= render partial: 'layouts/errors/errors' %>
+      <%= render partial: 'layouts/errors/errors' %>
 
-  <input type="submit" value="Sign Up!">
-</form>
-
-<%= link_to t('Back to home'), '/' %>
+      <div class="signup-btn-container">
+        <input class="signup" type="submit" value="Create Account">
+      </div>
+    </form>
+    <section class="signup-new-user-redirect-container">Already Have an Account?
+      <a class="signup-new-user-redirect" href="/session">Log In</a>
+    </section>
+  </div>
+</div>

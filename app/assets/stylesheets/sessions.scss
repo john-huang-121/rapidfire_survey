@@ -2,3 +2,59 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.login-page-container {
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 70px);
+  background-image: url("glenn-carstens-peters-190592-unsplash.jpg");
+  background-size: cover;
+  padding: 120px 0;
+}
+
+.login-container {
+  padding: 30px 20px;
+  width: 15%;
+  height: 200px;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.login-h1 {
+  font-family: sans-serif;
+  font-size: 25px;
+  padding-bottom: 10px;}
+
+.login-input-box {
+  border: 1px solid;
+  border-radius: 3px;
+  width: calc(100% - 10px);
+  margin-bottom: 10px;
+  padding: 5px;
+  background: whitesmoke;
+}
+
+.login-and-admin-btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login {
+  border: 1px solid black;
+  border-radius: 10px;
+  background: linear-gradient(#ad5a61,red);;
+  padding: 5px 20px;
+  width: 30%;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.login-new-user-redirect-container {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.login-new-user-redirect {
+  color: blue;
+}

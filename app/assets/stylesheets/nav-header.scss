@@ -1,0 +1,23 @@
+.homepage-header-login-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 100px;
+  background: linear-gradient(#ad5a61, red);
+}
+
+.homepage-logo {
+  color: white;
+  font-size: 30px;
+  font-weight: 900;
+  font-family: Dancing Script,cursive;
+}
+
+.login-nav-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  font-family: Dancing Script, cursive;
+  font-size: 25px;
+  width: 200px;
+  }

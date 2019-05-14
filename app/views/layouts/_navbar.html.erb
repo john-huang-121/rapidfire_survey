@@ -1,0 +1,22 @@
+<div class="homepage-header-login-container">
+  <a href="/" class="homepage-logo">Survey Home</a>
+  <div class="login-nav-container">
+    <% if current_user %>
+    <ul>
+      <li>Logged in as: <%= current_user.username %></li>
+      <li>
+        <form action="/session" method="POST">
+          <input type="hidden"
+                name="authenticity_token"
+                value="<%= form_authenticity_token %>">
+          <input type="hidden" value="delete" name="_method" />
+          <input type="submit" value="Logout" />
+        </form>
+      </li>
+    </ul>
+    <% else %>
+      <%= link_to ('Login'), '/session' %>
+      <%= link_to ('Signup'), '/users' %>
+    <% end %>
+  </div>
+</div>
