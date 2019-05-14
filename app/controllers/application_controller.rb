@@ -6,10 +6,6 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by_session_token(session[:session_token])
   end
 
-  # def can_administer?
-  #   current_user.try(User.find_admin)
-  # end
-
   def can_administer?
     admin = User.find_admin
 

@@ -1,6 +1,25 @@
-<h2>
-  Surveys
-</h2>
+<div class="homepage-header-login-container">
+  <h2>Surveys</h2>
+  <div class="login-container">
+    <% if current_user %>
+    <ul>
+      <li>Logged in as: <%= current_user.username %></li>
+      <li>
+        <form action="/session" method="POST">
+          <input type="hidden"
+                name="authenticity_token"
+                value="<%= form_authenticity_token %>">
+          <input type="hidden" value="delete" name="_method" />
+          <input type="submit" value="Logout" />
+        </form>
+      </li>
+    </ul>
+    <% else %>
+      <%= link_to ('Login'), '/session' %>
+      <%= link_to ('Signup'), '/users' %>
+    <% end %>
+  </div>
+</div>
 <h3>
   <% if can_administer? %>
     <%= link_to "New Survey", new_survey_path %>
@@ -10,9 +29,6 @@
   <%= link_to t('Back to home'), '/' %>
 </h4>
 <h4>
-  <%= link_to ('Login'), '/session' %>
-  <%= link_to ('Signup'), '/users' %>
-
 <hr/>
 
 <table>
