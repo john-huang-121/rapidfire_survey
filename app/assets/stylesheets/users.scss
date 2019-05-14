@@ -5,13 +5,14 @@
 .signup-page-container {
   display: flex;
   justify-content: center;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 76px);
   background-image: url("glenn-carstens-peters-190592-unsplash.jpg");
   background-size: cover;
-  padding: 120px 0;
 }
 
 .signup-container {
+  position: fixed;
+  top: 20%;
   padding: 30px 20px;
   width: 15%;
   height: 200px;
