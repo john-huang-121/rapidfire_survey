@@ -14915,3 +14915,167 @@ Processing by Rapidfire::SurveysController#index as HTML
 Completed 200 OK in 80ms (Views: 77.6ms | ActiveRecord: 0.8ms)
 
 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "admin"], ["password_digest", "$2a$10$ev7D/w1HDaywRllHtZl67OxGm4oinCMEitJm.NkVobL4zA6DbAgY2"], ["session_token", "QGnGx24SQP4TbM0Gl8T0nA"], ["created_at", "2019-05-16 05:40:04.688680"], ["updated_at", "2019-05-16 05:40:04.688680"]]
+  [1m[35m (101.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rapidfire_development"[0m
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rapidfire_test"[0m
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1075.5ms)[0m  [1m[35mCREATE DATABASE "rapidfire_development" ENCODING = 'unicode'[0m
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1137.6ms)[0m  [1m[35mCREATE DATABASE "rapidfire_test" ENCODING = 'unicode'[0m
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "rapidfire_answers" CASCADE[0m
+  ↳ db/schema.rb:15
+  [1m[35m (168.5ms)[0m  [1m[35mCREATE TABLE "rapidfire_answers" ("id" bigserial primary key, "attempt_id" integer, "question_id" integer, "answer_text" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (75.2ms)[0m  [1m[35mCREATE  INDEX  "index_rapidfire_answers_on_attempt_id" ON "rapidfire_answers"  ("attempt_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (81.4ms)[0m  [1m[35mCREATE  INDEX  "index_rapidfire_answers_on_question_id" ON "rapidfire_answers"  ("question_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "rapidfire_attempts" CASCADE[0m
+  ↳ db/schema.rb:25
+  [1m[35m (149.2ms)[0m  [1m[35mCREATE TABLE "rapidfire_attempts" ("id" bigserial primary key, "survey_id" integer, "user_type" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (92.9ms)[0m  [1m[35mCREATE  INDEX  "index_rapidfire_attempts_on_survey_id" ON "rapidfire_attempts"  ("survey_id")[0m
+  ↳ db/schema.rb:25
+  [1m[35m (85.4ms)[0m  [1m[35mCREATE  INDEX  "index_rapidfire_attempts_on_user_id_and_user_type" ON "rapidfire_attempts"  ("user_id", "user_type")[0m
+  ↳ db/schema.rb:25
+  [1m[35m (92.5ms)[0m  [1m[35mCREATE  INDEX  "index_rapidfire_attempts_on_user_type_and_user_id" ON "rapidfire_attempts"  ("user_type", "user_id")[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "rapidfire_questions" CASCADE[0m
+  ↳ db/schema.rb:36
+  [1m[35m (161.3ms)[0m  [1m[35mCREATE TABLE "rapidfire_questions" ("id" bigserial primary key, "survey_id" integer, "type" character varying, "question_text" character varying, "default_text" character varying, "placeholder" character varying, "position" integer, "answer_options" text, "validation_rules" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (83.8ms)[0m  [1m[35mCREATE  INDEX  "index_rapidfire_questions_on_survey_id" ON "rapidfire_questions"  ("survey_id")[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "rapidfire_surveys" CASCADE[0m
+  ↳ db/schema.rb:50
+  [1m[35m (164.9ms)[0m  [1m[35mCREATE TABLE "rapidfire_surveys" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:50
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:57
+  [1m[35m (129.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:57
+  [1m[35m (80.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:57
+  [1m[35m (84.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:57
+  [1m[35m (195.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (10.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190514184914)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (9.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190513012335),
+(20190513012443);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (170.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-16 06:05:50.288215"], ["updated_at", "2019-05-16 06:05:50.288215"]]
+  ↳ db/schema.rb:13
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "rapidfire_answers" CASCADE[0m
+  ↳ db/schema.rb:15
+  [1m[35m (151.5ms)[0m  [1m[35mCREATE TABLE "rapidfire_answers" ("id" bigserial primary key, "attempt_id" integer, "question_id" integer, "answer_text" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (83.7ms)[0m  [1m[35mCREATE  INDEX  "index_rapidfire_answers_on_attempt_id" ON "rapidfire_answers"  ("attempt_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (85.9ms)[0m  [1m[35mCREATE  INDEX  "index_rapidfire_answers_on_question_id" ON "rapidfire_answers"  ("question_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "rapidfire_attempts" CASCADE[0m
+  ↳ db/schema.rb:25
+  [1m[35m (139.2ms)[0m  [1m[35mCREATE TABLE "rapidfire_attempts" ("id" bigserial primary key, "survey_id" integer, "user_type" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (96.7ms)[0m  [1m[35mCREATE  INDEX  "index_rapidfire_attempts_on_survey_id" ON "rapidfire_attempts"  ("survey_id")[0m
+  ↳ db/schema.rb:25
+  [1m[35m (85.7ms)[0m  [1m[35mCREATE  INDEX  "index_rapidfire_attempts_on_user_id_and_user_type" ON "rapidfire_attempts"  ("user_id", "user_type")[0m
+  ↳ db/schema.rb:25
+  [1m[35m (88.3ms)[0m  [1m[35mCREATE  INDEX  "index_rapidfire_attempts_on_user_type_and_user_id" ON "rapidfire_attempts"  ("user_type", "user_id")[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "rapidfire_questions" CASCADE[0m
+  ↳ db/schema.rb:36
+  [1m[35m (153.5ms)[0m  [1m[35mCREATE TABLE "rapidfire_questions" ("id" bigserial primary key, "survey_id" integer, "type" character varying, "question_text" character varying, "default_text" character varying, "placeholder" character varying, "position" integer, "answer_options" text, "validation_rules" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (84.4ms)[0m  [1m[35mCREATE  INDEX  "index_rapidfire_questions_on_survey_id" ON "rapidfire_questions"  ("survey_id")[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "rapidfire_surveys" CASCADE[0m
+  ↳ db/schema.rb:50
+  [1m[35m (154.4ms)[0m  [1m[35mCREATE TABLE "rapidfire_surveys" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:50
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:57
+  [1m[35m (141.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:57
+  [1m[35m (83.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:57
+  [1m[35m (83.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:57
+  [1m[35m (162.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190514184914)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (12.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190513012335),
+(20190513012443);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (154.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-16 06:05:52.194623"], ["updated_at", "2019-05-16 06:05:52.194623"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-05-16 06:05:52.201758"], ["key", "environment"]]
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(119844861828388935)[0m
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(119844861828388935)[0m
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/john/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "admin"], ["password_digest", "$2a$10$iabnycHCIGFqOZ2WrDhEe.OSlPltLaHDIY745RVnYH3LIs01cbzyG"], ["session_token", "6wyKko6-unf1sQHgNYNJHw"], ["created_at", "2019-05-16 06:13:47.477581"], ["updated_at", "2019-05-16 06:13:47.477581"]]
+  [1m[35m (25.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]

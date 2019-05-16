@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_05_14_184914) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "rapidfire_answers", force: :cascade do |t|
     t.integer "attempt_id"
     t.integer "question_id"
