@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## In-Progress work
 
-Things you may want to cover:
+used the rapidfire gem for making surveys.
 
-* Ruby version
+(https://github.com/code-mancers/rapidfire)["link to rapidfire gem repo"]
 
-* System dependencies
 
-* Configuration
+Steps:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+bundle install
+rails console
+User.create!({username: "admin", password: "123456"}) (BCrypt will salt and hash)
+rails server (start up server)
+visit localhost:3000/rapidfire (should root to it as main page)
