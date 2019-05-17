@@ -15079,3 +15079,2362 @@ Completed 200 OK in 80ms (Views: 77.6ms | ActiveRecord: 0.8ms)
   [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "admin"], ["password_digest", "$2a$10$iabnycHCIGFqOZ2WrDhEe.OSlPltLaHDIY745RVnYH3LIs01cbzyG"], ["session_token", "6wyKko6-unf1sQHgNYNJHw"], ["created_at", "2019-05-16 06:13:47.477581"], ["updated_at", "2019-05-16 06:13:47.477581"]]
   [1m[35m (25.6ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2019-05-15 23:48:19 -0700
+  
+ActiveRecord::ConnectionNotEstablished (No connection pool with 'primary' found.):
+  
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:1013:in `retrieve_connection'
+activerecord (5.2.3) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.3) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.3) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/rapidfire" for ::1 at 2019-05-15 23:48:59 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rapidfire::SurveysController#index as HTML
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (1.9ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  Rendered collection of rapidfire/surveys/_survey.html.erb [0 times] (0.0ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (89.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered layouts/_navbar.html.erb (3.1ms)
+Completed 200 OK in 563ms (Views: 520.9ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-15 23:49:04 -0700
+Processing by Rapidfire::SurveysController#index as HTML
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.7ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  Rendered collection of rapidfire/surveys/_survey.html.erb [0 times] (0.0ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (16.7ms)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered layouts/_navbar.html.erb (5.0ms)
+Completed 200 OK in 89ms (Views: 80.8ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/session" for ::1 at 2019-05-15 23:49:18 -0700
+Processing by SessionsController#show as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/errors/_errors.html.erb (1.0ms)
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered layouts/_navbar.html.erb (3.6ms)
+Completed 200 OK in 55ms (Views: 54.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/session" for ::1 at 2019-05-15 23:49:19 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"3qFfi7EOE58Iuc0uRwmkQvxeH/iiZFABFNnw0o7u6KK6rrAABLPl2uroNNQkWO7pqKlxHHXrH6XS9B7P7OqBEQ==", "user"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["updated_at", "2019-05-16 06:49:19.614771"], ["id", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (47.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+Redirected to http://localhost:3000/rapidfire/
+Completed 302 Found in 151ms (ActiveRecord: 48.4ms)
+
+
+Started GET "/rapidfire/" for ::1 at 2019-05-15 23:49:19 -0700
+Processing by Rapidfire::SurveysController#index as HTML
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.8ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  Rendered collection of rapidfire/surveys/_survey.html.erb [0 times] (0.0ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (12.3ms)
+  Rendered layouts/_navbar.html.erb (2.3ms)
+Completed 200 OK in 78ms (Views: 72.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rapidfire/surveys/new" for ::1 at 2019-05-15 23:50:22 -0700
+Processing by Rapidfire::SurveysController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering rapidfire/surveys/new.html.erb within layouts/application
+  Rendered rapidfire/surveys/_form.html.erb (20.8ms)
+  Rendered rapidfire/surveys/new.html.erb within layouts/application (33.8ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+Completed 200 OK in 129ms (Views: 83.7ms | ActiveRecord: 12.2ms)
+
+
+Started POST "/rapidfire/surveys" for ::1 at 2019-05-15 23:50:56 -0700
+Processing by Rapidfire::SurveysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D3xhoD/C2eTgyLVzvVAQgQkpmFNPgCGgYQqb1obp2N03AOft9ePb+fEn+4czS83tCyf3Dg6Sn/wY/VdsnSQ9Hw==", "survey"=>{"name"=>"Checkbox", "description"=>"A survey using checkboxes"}, "commit"=>"Create Survey"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Unpermitted parameter: :description
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRapidfire::Survey Create (0.8ms)[0m  [1m[32mINSERT INTO "rapidfire_surveys" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Checkbox"], ["created_at", "2019-05-16 06:50:56.858880"], ["updated_at", "2019-05-16 06:50:56.858880"]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (46.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/rapidfire/surveys
+Completed 302 Found in 58ms (ActiveRecord: 49.2ms)
+
+
+Started GET "/rapidfire/surveys" for ::1 at 2019-05-15 23:50:56 -0700
+Processing by Rapidfire::SurveysController#index as HTML
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (10.0ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (19.0ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 76ms (Views: 71.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-15 23:51:00 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.6ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.6ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:23
+  Rendered collection of rapidfire/questions/_question.html.erb [0 times] (0.0ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (24.9ms)
+  Rendered layouts/_navbar.html.erb (1.8ms)
+Completed 200 OK in 111ms (Views: 82.2ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/rapidfire/surveys/1/questions/new" for ::1 at 2019-05-15 23:51:04 -0700
+Processing by Rapidfire::QuestionsController#new as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/new.html.erb within layouts/application
+  Rendered rapidfire/questions/_form.html.erb (12.7ms)
+  Rendered rapidfire/questions/new.html.erb within layouts/application (49.2ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 186ms (Views: 141.0ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/rapidfire/surveys/1/questions" for ::1 at 2019-05-15 23:52:13 -0700
+Processing by Rapidfire::QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3fGLIAshho6Eh3mqrJiofz73LcJsNeIgIlq7VslMnJtKS3NaFWyZdTkc0DKvF7yrLw0mZZkYFDLMfx2gDywpqw==", "question"=>{"type"=>"Rapidfire::Questions::Checkbox", "question_text"=>"Choose the apples you like to eat.", "position"=>"", "placeholder"=>"", "default_text"=>"", "answer_options"=>"Granny Smith\r\nGala\r\nFuji\r\nHoneycrisp", "answer_presence"=>"1", "answer_minimum_length"=>"", "answer_maximum_length"=>"", "answer_greater_than_or_equal_to"=>"", "answer_less_than_or_equal_to"=>""}, "commit"=>"Create Question", "survey_id"=>"1"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRapidfire::Questions::Checkbox Create (1.1ms)[0m  [1m[32mINSERT INTO "rapidfire_questions" ("survey_id", "type", "question_text", "placeholder", "answer_options", "validation_rules", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["survey_id", 1], ["type", "Rapidfire::Questions::Checkbox"], ["question_text", "Choose the apples you like to eat."], ["placeholder", ""], ["answer_options", "Granny Smith\r\nGala\r\nFuji\r\nHoneycrisp"], ["validation_rules", "---\n:presence: '1'\n:minimum: ''\n:maximum: ''\n:greater_than_or_equal_to: ''\n:less_than_or_equal_to: ''\n"], ["created_at", "2019-05-16 06:52:13.623108"], ["updated_at", "2019-05-16 06:52:13.623108"]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (100.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/rapidfire/surveys/1/questions
+Completed 302 Found in 156ms (ActiveRecord: 105.8ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-15 23:52:13 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (1.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:23
+  Rendered collection of rapidfire/questions/_question.html.erb [1 times] (2.2ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (11.5ms)
+  Rendered layouts/_navbar.html.erb (2.1ms)
+Completed 200 OK in 99ms (Views: 89.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/rapidfire/surveys.1" for ::1 at 2019-05-15 23:52:17 -0700
+Processing by Rapidfire::SurveysController#index as 
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.9ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (3.2ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (14.7ms)
+  Rendered layouts/_navbar.html.erb (1.9ms)
+Completed 200 OK in 104ms (Views: 96.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/rapidfire/surveys/1/attempts/new" for ::1 at 2019-05-15 23:52:20 -0700
+Processing by Rapidfire::AttemptsController#new as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rapidfire/attempts_controller.rb:55
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/controllers/rapidfire/attempts_controller.rb:14
+  Rendering rapidfire/attempts/new.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (1.0ms)[0m  [1m[34mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."id" = $1 ORDER BY "rapidfire_questions"."position" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rapidfire/attempts/_form.html.erb:8
+  Rendered rapidfire/answers/_errors.html.erb (1.2ms)
+  Rendered rapidfire/answers/_checkbox.html.erb (8.0ms)
+  Rendered rapidfire/attempts/_form.html.erb (33.6ms)
+  Rendered rapidfire/attempts/new.html.erb within layouts/application (36.1ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+Completed 200 OK in 220ms (Views: 125.1ms | ActiveRecord: 18.5ms)
+
+
+Started POST "/rapidfire/surveys/1/attempts" for ::1 at 2019-05-15 23:52:27 -0700
+Processing by Rapidfire::AttemptsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SOeGG39wa0RWVTBD/rM/Zro0vQ4tespiAom8BdKRDWAg7M7b9xive0tD/bQtEfmJAFubHmQ32JIy7y5LPZ3Uyg==", "attempt"=>{"1"=>{"answer_text"=>{"0"=>"Granny Smith", "1"=>"Gala", "2"=>"0", "3"=>"0"}}}, "commit"=>"Save", "survey_id"=>"1"}
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rapidfire/attempts_controller.rb:55
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/controllers/rapidfire/attempts_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/rapidfire/attempts_controller.rb:20
+  [1m[36mRapidfire::Question Load (0.6ms)[0m  [1m[34mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."id" = $1 ORDER BY "rapidfire_questions"."position" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rapidfire/attempts_controller.rb:20
+  [1m[36mRapidfire::Attempt Create (1.0ms)[0m  [1m[32mINSERT INTO "rapidfire_attempts" ("survey_id", "user_type", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["survey_id", 1], ["user_type", "User"], ["user_id", 1], ["created_at", "2019-05-16 06:52:27.215010"], ["updated_at", "2019-05-16 06:52:27.215010"]]
+  ↳ app/controllers/rapidfire/attempts_controller.rb:20
+  [1m[36mRapidfire::Answer Create (1.2ms)[0m  [1m[32mINSERT INTO "rapidfire_answers" ("attempt_id", "question_id", "answer_text", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["attempt_id", 1], ["question_id", 1], ["answer_text", "Granny Smith\r\nGala"], ["created_at", "2019-05-16 06:52:27.217992"], ["updated_at", "2019-05-16 06:52:27.217992"]]
+  ↳ app/controllers/rapidfire/attempts_controller.rb:20
+  [1m[35m (21.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/rapidfire/attempts_controller.rb:20
+Redirected to http://localhost:3000/
+Completed 302 Found in 43ms (ActiveRecord: 25.9ms)
+
+
+Started GET "/" for ::1 at 2019-05-15 23:52:27 -0700
+Processing by Rapidfire::SurveysController#index as HTML
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (8.1ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (24.7ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 96ms (Views: 91.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 18:03:25 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rapidfire::SurveysController#index as HTML
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (1.3ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (13.8ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (128.6ms)
+  Rendered layouts/_navbar.html.erb (2.1ms)
+Completed 200 OK in 602ms (Views: 539.5ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:05:46 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (1.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:23
+  Rendered collection of rapidfire/questions/_question.html.erb [1 times] (2.7ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (143.7ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+Completed 200 OK in 644ms (Views: 196.1ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/rapidfire/surveys/1/questions/1/edit" for ::1 at 2019-05-17 14:08:06 -0700
+Processing by Rapidfire::QuestionsController#edit as HTML
+  Parameters: {"survey_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRapidfire::Question Load (0.6ms)[0m  [1m[34mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 AND "rapidfire_questions"."id" = $2 ORDER BY "rapidfire_questions"."position" ASC LIMIT $3[0m  [["survey_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/edit.html.erb within layouts/application
+  Rendered rapidfire/questions/_form.html.erb (118.9ms)
+  Rendered rapidfire/questions/edit.html.erb within layouts/application (120.8ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 663ms (Views: 441.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/rapidfire/surveys/1/questions/1/edit" for ::1 at 2019-05-17 14:08:07 -0700
+Processing by Rapidfire::QuestionsController#edit as HTML
+  Parameters: {"survey_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (9.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.7ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRapidfire::Question Load (0.6ms)[0m  [1m[34mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 AND "rapidfire_questions"."id" = $2 ORDER BY "rapidfire_questions"."position" ASC LIMIT $3[0m  [["survey_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/edit.html.erb within layouts/application
+  Rendered rapidfire/questions/_form.html.erb (14.2ms)
+  Rendered rapidfire/questions/edit.html.erb within layouts/application (16.3ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+Completed 200 OK in 97ms (Views: 69.7ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/rapidfire/surveys/1/questions/1/edit" for ::1 at 2019-05-17 14:13:21 -0700
+Processing by Rapidfire::QuestionsController#edit as HTML
+  Parameters: {"survey_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRapidfire::Question Load (0.5ms)[0m  [1m[34mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 AND "rapidfire_questions"."id" = $2 ORDER BY "rapidfire_questions"."position" ASC LIMIT $3[0m  [["survey_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/edit.html.erb within layouts/application
+  Rendered rapidfire/questions/_form.html.erb (5.4ms)
+  Rendered rapidfire/questions/edit.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 65ms (Views: 55.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rapidfire/surveys/1/questions/1/edit" for ::1 at 2019-05-17 14:13:23 -0700
+Processing by Rapidfire::QuestionsController#edit as HTML
+  Parameters: {"survey_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRapidfire::Question Load (2.4ms)[0m  [1m[34mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 AND "rapidfire_questions"."id" = $2 ORDER BY "rapidfire_questions"."position" ASC LIMIT $3[0m  [["survey_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/edit.html.erb within layouts/application
+  Rendered rapidfire/questions/_form.html.erb (64.4ms)
+  Rendered rapidfire/questions/edit.html.erb within layouts/application (66.0ms)
+  Rendered layouts/_navbar.html.erb (2.1ms)
+Completed 200 OK in 140ms (Views: 126.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 14:13:25 -0700
+Processing by Rapidfire::SurveysController#index as HTML
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.7ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (7.7ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (17.2ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 52ms (Views: 48.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:13:33 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.7ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (1.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:24
+  Rendered collection of rapidfire/questions/_question.html.erb [1 times] (1.2ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 49ms (Views: 40.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:15:42 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:23
+  Rendered collection of rapidfire/questions/_question.html.erb [1 times] (1.4ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 54ms (Views: 47.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:20:56 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:23
+  Rendered collection of rapidfire/questions/_question.html.erb [1 times] (2.4ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+Completed 200 OK in 98ms (Views: 89.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rapidfire/surveys.1" for ::1 at 2019-05-17 14:21:56 -0700
+Processing by Rapidfire::SurveysController#index as 
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.7ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (4.5ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (16.2ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 94ms (Views: 88.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:21:58 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.6ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:23
+  Rendered collection of rapidfire/questions/_question.html.erb [1 times] (5.0ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (16.2ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 101ms (Views: 95.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/rapidfire/surveys/1/questions/new" for ::1 at 2019-05-17 14:22:03 -0700
+Processing by Rapidfire::QuestionsController#new as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/new.html.erb within layouts/application
+  Rendered rapidfire/questions/_form.html.erb (8.0ms)
+  Rendered rapidfire/questions/new.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 67ms (Views: 59.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:22:40 -0700
+Processing by Rapidfire::QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hFHpaNpcb82bdCyCbnWcdtdvFlud8T2ODTpWU8m36b4T6xESxBFwNibvhRpt+oiixpUd/Gjcy5zjH/ClD9dcjg==", "question"=>{"type"=>"Rapidfire::Questions::Radio", "question_text"=>"Choose the apples you like to eat.", "position"=>"", "placeholder"=>"", "default_text"=>"", "answer_options"=>"Apple1\r\nApple2", "answer_presence"=>"0", "answer_minimum_length"=>"", "answer_maximum_length"=>"", "answer_greater_than_or_equal_to"=>"", "answer_less_than_or_equal_to"=>""}, "commit"=>"Create Question", "survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.6ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRapidfire::Questions::Radio Create (33.9ms)[0m  [1m[32mINSERT INTO "rapidfire_questions" ("survey_id", "type", "question_text", "default_text", "placeholder", "answer_options", "validation_rules", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["survey_id", 1], ["type", "Rapidfire::Questions::Radio"], ["question_text", "Choose the apples you like to eat."], ["default_text", ""], ["placeholder", ""], ["answer_options", "Apple1\r\nApple2"], ["validation_rules", "---\n:presence: '0'\n:minimum: ''\n:maximum: ''\n:greater_than_or_equal_to: ''\n:less_than_or_equal_to: ''\n"], ["created_at", "2019-05-17 21:22:40.875067"], ["updated_at", "2019-05-17 21:22:40.875067"]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (50.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/rapidfire/surveys/1/questions
+Completed 302 Found in 146ms (ActiveRecord: 86.4ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:22:40 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (1.1ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:23
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.7ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (11.6ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 77ms (Views: 69.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/rapidfire/surveys.1" for ::1 at 2019-05-17 14:26:18 -0700
+Processing by Rapidfire::SurveysController#index as 
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (1.4ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (3.2ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_navbar.html.erb (1.9ms)
+Completed 200 OK in 85ms (Views: 78.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:26:23 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:23
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.7ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 50ms (Views: 43.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 14:35:58 -0700
+Processing by Rapidfire::SurveysController#index as HTML
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (2.9ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (16.1ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 496ms (Views: 489.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 14:35:58 -0700
+Processing by Rapidfire::SurveysController#index as HTML
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (4.7ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (14.0ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 71ms (Views: 66.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:40:17 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (1.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.9ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+Completed 200 OK in 79ms (Views: 70.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:41:31 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:23
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (3.1ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 72ms (Views: 60.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:43:19 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (1.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:23
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.3ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+Completed 200 OK in 102ms (Views: 96.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:46:18 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (1.1ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:23
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.2ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+Completed 200 OK in 102ms (Views: 95.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:46:48 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.7ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:23
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.5ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 56ms (Views: 47.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:47:20 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.8ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:23
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.8ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 109ms (Views: 102.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:51:44 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.8ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.4ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 172ms (Views: 161.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:52:10 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (3.0ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+Completed 200 OK in 126ms (Views: 119.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/rapidfire/surveys.1" for ::1 at 2019-05-17 14:52:31 -0700
+Processing by Rapidfire::SurveysController#index as 
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (2.6ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (12.4ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 80ms (Views: 74.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:52:35 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (1.5ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (6.0ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (12.5ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 78ms (Views: 70.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:53:44 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.6ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+Completed 200 OK in 77ms (Views: 69.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:54:07 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.2ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_navbar.html.erb (2.3ms)
+Completed 200 OK in 101ms (Views: 95.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:56:57 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.9ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+Completed 200 OK in 216ms (Views: 210.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 14:58:46 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.8ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (3.1ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+Completed 200 OK in 137ms (Views: 131.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:04:55 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.9ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.8ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.4ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_navbar.html.erb (1.7ms)
+Completed 200 OK in 111ms (Views: 96.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:05:02 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.9ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.2ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 126ms (Views: 119.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:07:08 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.6ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.9ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 101ms (Views: 94.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:07:12 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.5ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.4ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+Completed 200 OK in 85ms (Views: 79.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:07:59 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.7ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.5ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.2ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_navbar.html.erb (2.0ms)
+Completed 200 OK in 68ms (Views: 59.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:08:10 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.7ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.6ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 73ms (Views: 66.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:09:14 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (2.8ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (3.8ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 74ms (Views: 66.1ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:10:14 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.6ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.0ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+Completed 200 OK in 121ms (Views: 114.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/rapidfire/surveys.1" for ::1 at 2019-05-17 15:10:22 -0700
+Processing by Rapidfire::SurveysController#index as 
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.7ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (3.6ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 78ms (Views: 73.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:10:30 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (4.7ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 67ms (Views: 60.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/rapidfire/surveys.1" for ::1 at 2019-05-17 15:11:05 -0700
+Processing by Rapidfire::SurveysController#index as 
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.8ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (8.0ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (19.8ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 140ms (Views: 132.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:11:10 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.5ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (3.2ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+Completed 200 OK in 56ms (Views: 50.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:12:34 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.5ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.6ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+Completed 200 OK in 128ms (Views: 120.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:12:45 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.9ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.1ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 120ms (Views: 115.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:12:48 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.6ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.9ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+Completed 200 OK in 54ms (Views: 44.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:13:57 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (7.4ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 98ms (Views: 91.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:16:20 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.5ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.7ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 168ms (Views: 158.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:16:40 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.7ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 186ms (Views: 179.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/rapidfire/surveys.1" for ::1 at 2019-05-17 15:16:59 -0700
+Processing by Rapidfire::SurveysController#index as 
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (5.8ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (19.2ms)
+  Rendered layouts/_navbar.html.erb (1.9ms)
+Completed 200 OK in 92ms (Views: 85.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/rapidfire/surveys.1" for ::1 at 2019-05-17 15:17:11 -0700
+Processing by Rapidfire::SurveysController#index as 
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.6ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (3.7ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (19.1ms)
+  Rendered layouts/_navbar.html.erb (1.8ms)
+Completed 200 OK in 98ms (Views: 88.2ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:17:15 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.8ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.0ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 74ms (Views: 67.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:17:47 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.5ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 125ms (Views: 119.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rapidfire/surveys.1" for ::1 at 2019-05-17 15:18:05 -0700
+Processing by Rapidfire::SurveysController#index as 
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (3.0ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_navbar.html.erb (1.7ms)
+Completed 200 OK in 76ms (Views: 70.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:18:15 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.7ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (1.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.9ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (12.1ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 80ms (Views: 70.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:18:27 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.5ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (3.3ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_navbar.html.erb (1.9ms)
+Completed 200 OK in 121ms (Views: 114.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/rapidfire/surveys.1" for ::1 at 2019-05-17 15:18:42 -0700
+Processing by Rapidfire::SurveysController#index as 
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (1.9ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (8.4ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (26.1ms)
+  Rendered layouts/_navbar.html.erb (1.8ms)
+Completed 200 OK in 92ms (Views: 85.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:18:46 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (1.1ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.0ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 77ms (Views: 69.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/rapidfire/surveys.1" for ::1 at 2019-05-17 15:19:51 -0700
+Processing by Rapidfire::SurveysController#index as 
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (5.4ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (17.3ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 85ms (Views: 79.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:19:54 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (1.0ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.8ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.9ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+Completed 200 OK in 81ms (Views: 72.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:20:58 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (1.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.8ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+Completed 200 OK in 189ms (Views: 183.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:21:32 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (2.2ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.1ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_navbar.html.erb (2.2ms)
+Completed 200 OK in 123ms (Views: 115.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:21:59 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (2.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.3ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 145ms (Views: 137.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/rapidfire/surveys/1/questions/1/edit" for ::1 at 2019-05-17 15:22:07 -0700
+Processing by Rapidfire::QuestionsController#edit as HTML
+  Parameters: {"survey_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.6ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRapidfire::Question Load (0.5ms)[0m  [1m[34mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 AND "rapidfire_questions"."id" = $2 ORDER BY "rapidfire_questions"."position" ASC LIMIT $3[0m  [["survey_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/edit.html.erb within layouts/application
+  Rendered rapidfire/questions/_form.html.erb (7.2ms)
+  Rendered rapidfire/questions/edit.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 70ms (Views: 57.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 15:22:12 -0700
+Processing by Rapidfire::SurveysController#index as HTML
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (4.2ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_navbar.html.erb (1.8ms)
+Completed 200 OK in 67ms (Views: 64.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/rapidfire/surveys/1/attempts/new" for ::1 at 2019-05-17 15:22:16 -0700
+Processing by Rapidfire::AttemptsController#new as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rapidfire/attempts_controller.rb:55
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Question Load (0.7ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/controllers/rapidfire/attempts_controller.rb:14
+  Rendering rapidfire/attempts/new.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."id" = $1 ORDER BY "rapidfire_questions"."position" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/rapidfire/attempts/_form.html.erb:8
+  Rendered rapidfire/answers/_errors.html.erb (0.5ms)
+  Rendered rapidfire/answers/_checkbox.html.erb (16.0ms)
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."id" = $1 ORDER BY "rapidfire_questions"."position" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/rapidfire/attempts/_form.html.erb:8
+  Rendered rapidfire/answers/_errors.html.erb (0.1ms)
+  Rendered rapidfire/answers/_radio.html.erb (13.6ms)
+  Rendered rapidfire/attempts/_form.html.erb (63.7ms)
+  Rendered rapidfire/attempts/new.html.erb within layouts/application (79.1ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 299ms (Views: 114.1ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 15:22:59 -0700
+Processing by Rapidfire::SurveysController#index as HTML
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (5.6ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (17.1ms)
+  Rendered layouts/_navbar.html.erb (1.7ms)
+Completed 200 OK in 92ms (Views: 88.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 15:22:59 -0700
+Processing by Rapidfire::SurveysController#index as HTML
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (1.1ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (5.4ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (17.3ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 80ms (Views: 75.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 15:22:59 -0700
+Processing by Rapidfire::SurveysController#index as HTML
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (4.2ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+Completed 200 OK in 105ms (Views: 100.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:23:20 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.6ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (3.9ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 78ms (Views: 67.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/rapidfire/surveys.1" for ::1 at 2019-05-17 15:23:24 -0700
+Processing by Rapidfire::SurveysController#index as 
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (3.5ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 87ms (Views: 81.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:23:31 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.6ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.2ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_navbar.html.erb (1.8ms)
+Completed 200 OK in 78ms (Views: 71.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rapidfire/surveys.1" for ::1 at 2019-05-17 15:24:01 -0700
+Processing by Rapidfire::SurveysController#index as 
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (4.4ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_navbar.html.erb (2.2ms)
+Completed 200 OK in 73ms (Views: 68.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/rapidfire/surveys.1" for ::1 at 2019-05-17 15:26:20 -0700
+Processing by Rapidfire::SurveysController#index as 
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (3.6ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+Completed 200 OK in 78ms (Views: 72.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:26:27 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.6ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.6ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_navbar.html.erb (1.8ms)
+Completed 200 OK in 110ms (Views: 104.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/rapidfire/surveys/1/questions/1/edit" for ::1 at 2019-05-17 15:26:53 -0700
+Processing by Rapidfire::QuestionsController#edit as HTML
+  Parameters: {"survey_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 AND "rapidfire_questions"."id" = $2 ORDER BY "rapidfire_questions"."position" ASC LIMIT $3[0m  [["survey_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/edit.html.erb within layouts/application
+  Rendered rapidfire/questions/_form.html.erb (12.2ms)
+  Rendered rapidfire/questions/edit.html.erb within layouts/application (14.4ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 73ms (Views: 63.2ms | ActiveRecord: 1.1ms)
+
+
+Started PUT "/rapidfire/surveys/1/questions/1" for ::1 at 2019-05-17 15:27:05 -0700
+Processing by Rapidfire::QuestionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3M+5oHGfBy0lHFepmBIU4q3RCRA1cfNVVJQb2KaRYYXAC96JAOEYS/ki083uieq510jZKQrJJzQXUebEeQS8dw==", "question"=>{"type"=>"Rapidfire::Questions::Checkbox", "question_text"=>"Choose the apples you like to eat. Filler text here and there and some more", "position"=>"", "placeholder"=>"", "default_text"=>"", "answer_options"=>"Granny Smith\r\nGala\r\nFuji\r\nHoneycrisp", "answer_presence"=>"1", "answer_minimum_length"=>"", "answer_maximum_length"=>"", "answer_greater_than_or_equal_to"=>"", "answer_less_than_or_equal_to"=>""}, "commit"=>"Update Question", "survey_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRapidfire::Question Load (1.5ms)[0m  [1m[34mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 AND "rapidfire_questions"."id" = $2 ORDER BY "rapidfire_questions"."position" ASC LIMIT $3[0m  [["survey_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRapidfire::Questions::Checkbox Update (1.6ms)[0m  [1m[33mUPDATE "rapidfire_questions" SET "question_text" = $1, "updated_at" = $2 WHERE "rapidfire_questions"."id" = $3[0m  [["question_text", "Choose the apples you like to eat. Filler text here and there and some more"], ["updated_at", "2019-05-17 22:27:05.481915"], ["id", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (31.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/rapidfire/surveys/1/questions
+Completed 302 Found in 52ms (ActiveRecord: 36.6ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:27:05 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.2ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 70ms (Views: 61.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/rapidfire/surveys.1" for ::1 at 2019-05-17 15:27:18 -0700
+Processing by Rapidfire::SurveysController#index as 
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.7ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (3.0ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 67ms (Views: 61.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:27:21 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.7ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (1.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.8ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_navbar.html.erb (1.7ms)
+Completed 200 OK in 73ms (Views: 64.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/rapidfire/surveys/1/questions/1/edit" for ::1 at 2019-05-17 15:27:24 -0700
+Processing by Rapidfire::QuestionsController#edit as HTML
+  Parameters: {"survey_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRapidfire::Question Load (0.6ms)[0m  [1m[34mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 AND "rapidfire_questions"."id" = $2 ORDER BY "rapidfire_questions"."position" ASC LIMIT $3[0m  [["survey_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/edit.html.erb within layouts/application
+  Rendered rapidfire/questions/_form.html.erb (7.4ms)
+  Rendered rapidfire/questions/edit.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 54ms (Views: 43.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 15:27:28 -0700
+Processing by Rapidfire::SurveysController#index as HTML
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (3.6ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 77ms (Views: 73.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:27:32 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (5.3ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 84ms (Views: 74.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:38:31 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.6ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.7ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.5ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 75ms (Views: 66.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:38:34 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.8ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.6ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.2ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_navbar.html.erb (2.3ms)
+Completed 200 OK in 69ms (Views: 61.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:38:43 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.5ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.2ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 63ms (Views: 55.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/rapidfire/surveys/1/questions/new" for ::1 at 2019-05-17 15:38:48 -0700
+Processing by Rapidfire::QuestionsController#new as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/new.html.erb within layouts/application
+  Rendered rapidfire/questions/_form.html.erb (17.4ms)
+  Rendered rapidfire/questions/new.html.erb within layouts/application (19.3ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 76ms (Views: 69.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rapidfire/surveys/1/questions/new" for ::1 at 2019-05-17 15:38:55 -0700
+Processing by Rapidfire::QuestionsController#new as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/new.html.erb within layouts/application
+  Rendered rapidfire/questions/_form.html.erb (9.5ms)
+  Rendered rapidfire/questions/new.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+Completed 200 OK in 88ms (Views: 81.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rapidfire/surveys/1/questions/new" for ::1 at 2019-05-17 15:39:01 -0700
+Processing by Rapidfire::QuestionsController#new as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/new.html.erb within layouts/application
+  Rendered rapidfire/questions/_form.html.erb (13.4ms)
+  Rendered rapidfire/questions/new.html.erb within layouts/application (16.1ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 87ms (Views: 76.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 15:39:22 -0700
+Processing by Rapidfire::SurveysController#index as HTML
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (1.2ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (3.0ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 62ms (Views: 59.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:39:30 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (1.2ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.0ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 51ms (Views: 44.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/rapidfire/surveys/1/questions/1/edit" for ::1 at 2019-05-17 15:39:33 -0700
+Processing by Rapidfire::QuestionsController#edit as HTML
+  Parameters: {"survey_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRapidfire::Question Load (0.5ms)[0m  [1m[34mSELECT  "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 AND "rapidfire_questions"."id" = $2 ORDER BY "rapidfire_questions"."position" ASC LIMIT $3[0m  [["survey_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/edit.html.erb within layouts/application
+  Rendered rapidfire/questions/_form.html.erb (23.8ms)
+  Rendered rapidfire/questions/edit.html.erb within layouts/application (27.4ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+Completed 200 OK in 134ms (Views: 123.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:39:41 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (3.1ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (5.3ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (16.3ms)
+  Rendered layouts/_navbar.html.erb (2.8ms)
+Completed 200 OK in 121ms (Views: 110.0ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:39:41 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.5ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.6ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_navbar.html.erb (2.8ms)
+Completed 200 OK in 123ms (Views: 113.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:39:41 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (2.7ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (3.9ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (17.5ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 148ms (Views: 138.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:40:19 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.7ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.6ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_navbar.html.erb (1.7ms)
+Completed 200 OK in 74ms (Views: 68.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:41:16 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.7ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 75ms (Views: 69.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:41:48 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.8ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 57ms (Views: 49.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/rapidfire/surveys/1/questions/new" for ::1 at 2019-05-17 15:42:03 -0700
+Processing by Rapidfire::QuestionsController#new as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/new.html.erb within layouts/application
+  Rendered rapidfire/questions/_form.html.erb (7.6ms)
+  Rendered rapidfire/questions/new.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 71ms (Views: 65.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:43:08 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.8ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 71ms (Views: 63.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/rapidfire/surveys/1/questions/new" for ::1 at 2019-05-17 15:43:11 -0700
+Processing by Rapidfire::QuestionsController#new as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/new.html.erb within layouts/application
+  Rendered rapidfire/questions/_form.html.erb (11.2ms)
+  Rendered rapidfire/questions/new.html.erb within layouts/application (13.6ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 112ms (Views: 101.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:43:13 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.5ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.8ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 67ms (Views: 61.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/rapidfire/surveys.1" for ::1 at 2019-05-17 15:43:17 -0700
+Processing by Rapidfire::SurveysController#index as 
+  Rendering rapidfire/surveys/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_surveys".* FROM "rapidfire_surveys"[0m
+  ↳ app/views/rapidfire/surveys/index.html.erb:22
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  Rendered collection of rapidfire/surveys/_survey.html.erb [1 times] (2.6ms)
+  Rendered rapidfire/surveys/index.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_navbar.html.erb (2.2ms)
+Completed 200 OK in 88ms (Views: 81.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:43:22 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.5ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.2ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.3ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 60ms (Views: 52.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:44:05 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.7ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (1.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.7ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 71ms (Views: 57.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:44:19 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.4ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.9ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 67ms (Views: 61.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:46:24 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.6ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.8ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 71ms (Views: 63.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:47:14 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.3ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.7ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 90ms (Views: 83.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:50:14 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (2.2ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:21
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (2.9ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+Completed 200 OK in 86ms (Views: 74.9ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/rapidfire/surveys/1/questions" for ::1 at 2019-05-17 15:50:24 -0700
+Processing by Rapidfire::QuestionsController#index as HTML
+  Parameters: {"survey_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eUkuhas9kN6pod-ccY3tBg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mRapidfire::Survey Load (0.4ms)[0m  [1m[34mSELECT  "rapidfire_surveys".* FROM "rapidfire_surveys" WHERE "rapidfire_surveys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/john/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering rapidfire/questions/index.html.erb within layouts/application
+  [1m[36mRapidfire::Question Load (0.3ms)[0m  [1m[34mSELECT "rapidfire_questions".* FROM "rapidfire_questions" WHERE "rapidfire_questions"."survey_id" = $1 ORDER BY "rapidfire_questions"."position" ASC[0m  [["survey_id", 1]]
+  ↳ app/views/rapidfire/questions/index.html.erb:20
+  Rendered collection of rapidfire/questions/_question.html.erb [2 times] (1.9ms)
+  Rendered rapidfire/questions/index.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+Completed 200 OK in 69ms (Views: 62.6ms | ActiveRecord: 1.3ms)
+
+
