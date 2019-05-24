@@ -1,0 +1,83 @@
+.attempt-survey-description {
+  text-align: center;
+  color: black;
+  font-size: 45px;
+  padding: 20px 0;
+}
+
+.attempt-container {
+  padding: 0 15%;
+  background: greenyellow;
+}
+
+.attempt-header {
+  text-align: center;
+  color: black;
+  font-size: 35px;
+  padding-bottom: 20px;
+}
+
+#new_attempt {
+  padding: 30px 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+#new_attempt > .form-group {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0;
+}
+
+#new_attempt > .form-group > .sub > label,
+#new_attempt > .form-group > label {
+  display: flex;
+  align-items: center;
+  padding-right: 25px;
+}
+
+// the question
+#new_attempt > .form-group > label:first-child {
+  display: flex;
+  align-items: flex-start;
+  padding-right: 0px;
+  width: 30%;
+}
+
+//inputs
+#new_attempt > .form-group > input,
+#new_attempt > .form-group > textarea {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: white;
+  width: 68%;
+}
+
+#new_attempt > .form-group > .sub > label > input,
+#new_attempt > .form-group > label > input {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+#new_attempt > .form-group > select {
+  width: 25%;
+  height: 40px;
+  overflow: hidden;
+}
+
+.attempt-submit-container {
+  text-align: center;
+}
+.attempt-submit-container > input {
+  border: 1px solid black;
+  border-radius: 10px;
+  background: linear-gradient(#ad5a61,red);;
+  width: 140px;
+  padding: 15px 20px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}

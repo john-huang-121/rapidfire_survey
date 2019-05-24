@@ -20,6 +20,7 @@
   padding: 30px 0 10px 0;
 }
 
+
 .question-header > a:nth-child(1) {
   font-size: 22px;
 }
@@ -27,4 +28,93 @@
 .question-header > a:nth-child(2) {
   margin-left: calc(44% - 140px);
   font-size: 40px;
+}
+
+.new-question-container {
+  height: 100%;
+  max-width: 100%;
+  background: url("kees-streefkerk-352781-unsplash.jpg") no-repeat;
+  background-size: cover;
+  opacity: 0.9;
+  padding: 0 25% 5% 25%;
+}
+
+.new-question-header {
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  font-weight: 900;
+  padding: 30px 0 10px 0;
+}
+
+.new-question-container > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  // -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+
+.new-question-container > form > input:nth-last-child(1) {
+  border: 1px solid black;
+  border-radius: 10px;
+  background: linear-gradient(#ad5a61,red);;
+  width: 140px;
+  padding: 15px 20px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.question-form-group-checkbox {
+  display: flex;
+  margin: 30px 0;
+  width: 100%;
+}
+
+.question-form-group-checkbox > label {
+  width: 160px;
+  margin-right: 15px;
+}
+
+.question-form-group-checkbox > select {
+  height: 30px;
+  width: 25%;
+}
+
+.question-form-group-checkbox > input {
+  width: 40px;
+  height: 40px;
+}
+
+.question-form-group {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  width: 100%;
+}
+
+
+.question-form-group > label {
+  width: 160px;
+  margin-right: 25px;
+}
+
+.question-form-group > input {
+  width: calc(100% - 125px);
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: white;
+}
+
+
+.question-form-group > textarea {
+  width: calc(100% - 125px);
+  border: 1px solid black;
+  background: white;
 }

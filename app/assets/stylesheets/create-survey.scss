@@ -24,16 +24,17 @@
   padding: 30px 20px;
   border: 1px solid black;
   border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.form-group {
+.survey-form-group {
   display: flex;
   justify-content: center;
   text-align: left;
   width: 100%;
 }
 
-.form-group > input {
+.survey-form-group > input {
   width: calc(100% - 100px);
   height: 35px;
   padding: 5px;
@@ -43,7 +44,7 @@
   background: whitesmoke;
 }
 
-.form-group > textarea {
+.survey-form-group > textarea {
   width: calc(100% - 100px);
   height: 150px;
   padding: 5px;
