@@ -1,29 +1,39 @@
-<div class="create-new-survey-container">
-  <div class="create-new-survey">
-    <% if can_administer? %>
-      <%= link_to "Create Survey", new_survey_path %>
-      <hr>
+<% if current_user %>
+  <div class="create-new-survey-container">
+    <div class="create-new-survey">
+      <% if can_administer? %>
+        <%= link_to "Create Survey", new_survey_path %>
+        <hr>
+      <% else %>
+        <div class="normal-user-header">
+          <h1>Available Surveys</h1>
+        </div>
+        <hr>
+      <% end %>
+    </div>
+
+
+    <table>
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th style="border-right: 1px solid black;">Survey</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "survey", collection: @surveys %>
+      </tbody>
+    </table>
+
+    <% if defined?(Kaminari) %>
+      <%= paginate @surveys %>
     <% end %>
   </div>
 
-
-  <table>
-    <colgroup>
-      <col>
-      <col>
-    </colgroup>
-    <thead>
-      <tr>
-        <th style="border-right: 1px solid black;">Survey</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render partial: "survey", collection: @surveys %>
-    </tbody>
-  </table>
-
-  <% if defined?(Kaminari) %>
-    <%= paginate @surveys %>
-  <% end %>
-</div>
+<% else %>
+  <%= render partial: 'layouts/homepage' %>
+<% end %>
