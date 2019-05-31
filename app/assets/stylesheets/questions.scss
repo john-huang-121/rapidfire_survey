@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 100vw;
   height: calc(100vh - 76px);
-  background: url("ian-schneider-108618-unsplash.jpg") no-repeat;
+  background: image-url("ian-schneider-108618-unsplash.jpg") no-repeat;
   background-size: cover;
   opacity: 0.9;
 }
@@ -39,7 +39,7 @@
 .new-question-container {
   height: 100%;
   max-width: 100%;
-  background: url("kees-streefkerk-352781-unsplash.jpg") no-repeat;
+  background: image-url("kees-streefkerk-352781-unsplash.jpg") no-repeat;
   background-size: cover;
   opacity: 0.9;
   padding: 0 25% 5% 25%;

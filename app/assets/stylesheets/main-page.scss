@@ -2,7 +2,7 @@
 .homepage-container {
   height: calc(100vh - 76px);
   width: 100vw;
-  background: url("dmitry-moraine-1378997-unsplash.jpg") no-repeat;
+  background: image-url("dmitry-moraine-1378997-unsplash.jpg") no-repeat;
   background-size: cover;
   background-position-y: -100px;
 }
@@ -36,7 +36,7 @@
 .create-new-survey-container {
   height: calc(100vh - 76px);
   width: 100vw;
-  background: url("ian-schneider-108618-unsplash.jpg") no-repeat;
+  background: image-url("ian-schneider-108618-unsplash.jpg") no-repeat;
   background-size: cover;
   opacity: 0.9;
 }
