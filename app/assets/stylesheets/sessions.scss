@@ -2,11 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.login-signup-errors {
+  color: red;
+  padding: 10px 0;
+}
+
 .login-page-container {
   display: flex;
   justify-content: center;
   height: calc(100vh - 76px);
-  background-image: url("glenn-carstens-peters-190592-unsplash.jpg");
+  background-image: image-url("glenn-carstens-peters-190592-unsplash.jpg");
   background-size: cover;
 }
 

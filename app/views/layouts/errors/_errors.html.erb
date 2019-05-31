@@ -1,6 +1,5 @@
   <% if flash.now[:errors] %>
     <% flash.now[:errors].each do |error| %>
-      <%= error %>
-      <br />
+      <p class='login-signup-errors'><%= error %></p>
     <% end %>
   <% end %>
