@@ -1,9 +1,45 @@
-.create-new-survey-container {
-  width: 100vw;
+// homepage
+.homepage-container {
   height: calc(100vh - 76px);
+  width: 100vw;
+  background: url("dmitry-moraine-1378997-unsplash.jpg") no-repeat;
+  background-size: cover;
+  background-position-y: -100px;
+}
+
+.homepage-title-container {
+  text-align: center;
+  padding: 10%;
+}
+
+.homepage-title-container > h1 {
+  font-size: 70px;
+  font-family: Dancing Script,cursive;
+  font-weight: 600;
+  color: red;
+}
+
+
+.homepage-title-container > h2 {
+  font-size: 35px;
+  font-family: Dancing Script,cursive;
+}
+
+
+// surveys after logging in
+.create-new-survey-container {
+  height: calc(100vh - 76px);
+  width: 100vw;
   background: url("ian-schneider-108618-unsplash.jpg") no-repeat;
   background-size: cover;
   opacity: 0.9;
+}
+
+.create-new-survey-container > table {
+  padding: 30px 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .create-new-survey {
@@ -54,7 +90,7 @@ td {
 }
 
 td > a {
-  color: lightskyblue;
+  color: blue;
   font-size: 25px;
 }
 

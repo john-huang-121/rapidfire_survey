@@ -11,7 +11,11 @@
     
     <body>
       <%= render partial: 'layouts/navbar' %>
-      <%= yield %>
+      <% if current_user %>
+        <%= yield %>
+      <% else %>
+        <%= render partial: 'layouts/homepage' %>
+      <% end %>
     </body>
     <footer>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
